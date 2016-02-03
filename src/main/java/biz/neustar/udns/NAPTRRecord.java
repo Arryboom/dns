@@ -1,12 +1,14 @@
 package biz.neustar.udns;
 
+import java.util.EnumSet;
+
 import biz.neustar.udns.enums.Type;
 
 public class NAPTRRecord extends ResourceRecord {
 	private int order;
 	private int priority;
 	
-	private String flags;
+	private EnumSet<Flags> flags;
 	private String services;
 	private String regexp;
 	
@@ -56,11 +58,36 @@ public class NAPTRRecord extends ResourceRecord {
 		this.replacement = replacement;
 	}
 
-	public String getFlags() {
+	public EnumSet<Flags> getFlags() {
 		return flags;
 	}
 
-	public void setFlags(String flags) {
+	public void setFlags(EnumSet<Flags> flags) {
 		this.flags = flags;
+	}
+	
+	public boolean addFlag(Flags flag) {
+		return flags.add(flag);
+	}
+	
+	public boolean containsFlag(Flags flag) {
+		return flags.contains(flag);
+	}
+	
+	public enum Flags {
+		A("A"),
+		S("S"),
+		U("U"),
+		P("P");
+		
+		String value;
+		
+		Flags(String value) {
+			this.value = value;
+		}
+		
+		public String getValue() {
+			return value;
+		}
 	}
 }
