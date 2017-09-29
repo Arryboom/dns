@@ -1,4 +1,4 @@
-package biz.neustar.udns;
+package biz.neustar.udns.records;
 
 import biz.neustar.udns.enums.DnsClass;
 import biz.neustar.udns.enums.Type;
@@ -6,12 +6,7 @@ import biz.neustar.udns.enums.Type;
 public abstract class ResourceRecord {
 	protected String name;
 	protected Type type;
-	protected DnsClass klass;
     protected int ttl;
-    
-    public ResourceRecord() {
-		this.klass = DnsClass.IN;
-    }
 
 	public String getName() {
 		return name;
@@ -31,5 +26,9 @@ public abstract class ResourceRecord {
 
 	public Type getType() {
 		return type;
+	}
+	
+	public DnsClass getDnsClass() {
+	    return DnsClass.IN;
 	}
 }

@@ -1,4 +1,4 @@
-package biz.neustar.udns;
+package biz.neustar.udns.records;
 
 public class Label {
 	private static final int MAX_LABEL_SIZE = 63;

@@ -1,4 +1,4 @@
-package biz.neustar.udns;
+package biz.neustar.udns.records;
 
 import java.util.ArrayList;
 import java.util.Collections;
